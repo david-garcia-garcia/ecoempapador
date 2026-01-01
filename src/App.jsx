@@ -2,9 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import config from './config';
 import { getProductById } from './data/products';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
+import Legal from './pages/Legal';
 import './App.css';
 
 function App() {
@@ -27,8 +29,13 @@ function App() {
             path="/checkout/:id"
             element={<Checkout getProductById={getProductById} />}
           />
+          <Route path="/aviso-legal" element={<Legal page="aviso-legal" />} />
+          <Route path="/privacidad" element={<Legal page="privacidad" />} />
+          <Route path="/cookies" element={<Legal page="cookies" />} />
+          <Route path="/terminos" element={<Legal page="terminos" />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

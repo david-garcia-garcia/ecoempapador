@@ -1,12 +1,30 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import config from '../config';
 import { products } from '../data/products';
 import perroMeando from '../images/perro_meando.png';
 import moquetaDucha from '../images/moqueta_ducha_limpiar.png';
+import cespedAzulEtiqueta from '../images/cesped_azul_etiqueta.png';
 import './Home.css';
 
 function Home() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Initialize PayPal button when component mounts and SDK is loaded
+    const initPayPal = () => {
+      if (window.paypal && window.paypal.HostedButtons) {
+        window.paypal.HostedButtons({
+          hostedButtonId: "PWWMZXUQPUBMG",
+        }).render("#paypal-container-PWWMZXUQPUBMG");
+      } else {
+        // Retry if SDK not loaded yet
+        setTimeout(initPayPal, 100);
+      }
+    };
+    
+    initPayPal();
+  }, []);
 
   const handleBuyNow = (productId) => {
     navigate(`/checkout/${productId}`);
@@ -109,18 +127,96 @@ function Home() {
                   <span className="product-model">{product.model}</span>
                   <h3>{product.name}</h3>
                   <p className="product-description">{product.description}</p>
-                  <div className="product-price-landing">
-                    {product.price}€
-                  </div>
-                  <button 
-                    className="buy-now-btn-landing"
-                    onClick={() => handleBuyNow(product.id)}
-                  >
-                    {config.buyButtonText}
-                  </button>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="paypal-button-container">
+            <div id="paypal-container-PWWMZXUQPUBMG"></div>
+          </div>
+
+          {/* Personalización con Chapa */}
+          <div className="personalization-section">
+            <h3>✨ Personalización con Chapa</h3>
+            <div className="personalization-content">
+              <div className="personalization-image">
+                <img src={cespedAzulEtiqueta} alt="Empapador con chapa personalizada" />
+              </div>
+              <div className="personalization-text">
+                <p>
+                  <strong>¿Quieres personalizar tu empapador?</strong> Ofrecemos la opción de añadir una chapa 
+                  personalizada con el nombre de tu mascota o cualquier texto que desees.
+                </p>
+                <p>
+                  La chapa se coloca en el marco del empapador, dándole un toque único y personal. 
+                  Perfecto para identificar el empapador de tu perro o como un regalo especial.
+                </p>
+                <p className="personalization-note">
+                  💡 <strong>Nota:</strong> Al realizar tu pedido, puedes especificar el texto que deseas 
+                  en la chapa personalizada.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quiénes Somos Section */}
+      <section id="quienes-somos" className="about-section">
+        <div className="section-container">
+          <h2>Quiénes Somos</h2>
+          <div className="about-content">
+            <div className="about-text">
+              <p className="about-intro">
+                En <strong>EcoEmpapador</strong>, nos dedicamos a crear soluciones ecológicas y prácticas 
+                para el cuidado de tus mascotas. Somos un equipo de amantes de los animales comprometidos 
+                con el bienestar de los perros y el medio ambiente.
+              </p>
+              
+              <div className="about-values">
+                <div className="value-item">
+                  <h3>🌱 Compromiso Ecológico</h3>
+                  <p>
+                    Creemos en productos reutilizables que reduzcan el desperdicio. Nuestros empapadores 
+                    están diseñados para durar años, ayudando a proteger el planeta mientras cuidas a tu mascota.
+                  </p>
+                </div>
+                
+                <div className="value-item">
+                  <h3>✅ Calidad Garantizada</h3>
+                  <p>
+                    Utilizamos materiales de primera calidad, probados y resistentes. Todos nuestros productos 
+                    están diseñados para ofrecer el mejor rendimiento y durabilidad.
+                  </p>
+                </div>
+                
+                <div className="value-item">
+                  <h3>💚 Amor por los Animales</h3>
+                  <p>
+                    Somos dueños de perros como tú. Entendemos las necesidades de tu mascota y diseñamos 
+                    productos pensando en su comodidad y bienestar.
+                  </p>
+                </div>
+              </div>
+
+              <div className="guarantee-box">
+                <h3>Nuestra Garantía</h3>
+                <p>
+                  Estamos tan seguros de la calidad de nuestros productos que ofrecemos 
+                  <strong> garantía de satisfacción</strong>. Si no estás completamente satisfecho, 
+                  te devolvemos tu dinero.
+                </p>
+              </div>
+
+              <div className="contact-info">
+                <h3>¿Tienes Preguntas?</h3>
+                <p>
+                  Estamos aquí para ayudarte. Si tienes alguna duda sobre nuestros productos o necesitas 
+                  asesoramiento, no dudes en contactarnos. Tu satisfacción es nuestra prioridad.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
