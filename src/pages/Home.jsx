@@ -13,17 +13,26 @@ function Home() {
   useEffect(() => {
     // Initialize PayPal button when component mounts and SDK is loaded
     const initPayPal = () => {
-      if (window.paypal && window.paypal.HostedButtons) {
-        window.paypal.HostedButtons({
-          hostedButtonId: "PWWMZXUQPUBMG",
-        }).render("#paypal-container-PWWMZXUQPUBMG");
-      } else {
-        // Retry if SDK not loaded yet
+      const container = document.getElementById('paypal-container-PWWMZXUQPUBMG');
+      if (container && window.paypal && window.paypal.HostedButtons) {
+        try {
+          window.paypal.HostedButtons({
+            hostedButtonId: "PWWMZXUQPUBMG",
+          }).render("#paypal-container-PWWMZXUQPUBMG");
+        } catch (error) {
+          console.error('Error initializing PayPal button:', error);
+        }
+      } else if (!container) {
+        // Container not found yet, retry
+        setTimeout(initPayPal, 100);
+      } else if (!window.paypal) {
+        // PayPal SDK not loaded yet, retry
         setTimeout(initPayPal, 100);
       }
     };
     
-    initPayPal();
+    // Wait a bit for DOM to be ready
+    setTimeout(initPayPal, 100);
   }, []);
 
   const handleBuyNow = (productId) => {
@@ -34,6 +43,7 @@ function Home() {
     <div className="landing-page">
       {/* Hero Section */}
       <section className="hero-section">
+        <div className="hero-bg-image" style={{ backgroundImage: `url(${perroMeando})` }}></div>
         <div className="hero-content">
           <h1>{config.heroTitle}</h1>
           <p className="hero-subtitle">{config.heroSubtitle}</p>
@@ -88,14 +98,6 @@ function Home() {
             </div>
           </div>
 
-          <div className="video-section">
-            <h3>Videos de demostración</h3>
-            <div className="video-placeholder">
-              <p>📹 Video: Perros usando los empapadores</p>
-              <p className="video-note">(Aquí puedes agregar videos de YouTube o Vimeo)</p>
-            </div>
-          </div>
-
           <div className="benefits-box">
             <h3>Ventajas de nuestros empapadores</h3>
             <ul>
@@ -132,10 +134,6 @@ function Home() {
             ))}
           </div>
 
-          <div className="paypal-button-container">
-            <div id="paypal-container-PWWMZXUQPUBMG"></div>
-          </div>
-
           {/* Personalización con Chapa */}
           <div className="personalization-section">
             <h3>✨ Personalización con Chapa</h3>
@@ -158,6 +156,10 @@ function Home() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="paypal-button-container">
+            <div id="paypal-container-PWWMZXUQPUBMG"></div>
           </div>
         </div>
       </section>

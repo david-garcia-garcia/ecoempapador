@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import config from './config';
 import { getProductById } from './data/products';
 import Header from './components/Header';
@@ -10,6 +11,13 @@ import Legal from './pages/Legal';
 import './App.css';
 
 function App() {
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="app">
       <Header siteName={config.name} />
