@@ -10,4 +10,9 @@ const basePath = process.env.VITE_BASE_PATH || '/';
 export default defineConfig({
   plugins: [react()],
   base: basePath,
+  publicDir: 'public',
+  build: {
+    // Ensure CNAME is copied but exclude .example files
+    copyPublicDir: true,
+  },
 });
