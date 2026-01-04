@@ -5,6 +5,7 @@ import { products } from '../data/products';
 import perroMeando from '../images/perro_meando.png';
 import moquetaDucha from '../images/moqueta_ducha_limpiar.png';
 import cespedAzulEtiqueta from '../images/cesped_azul_etiqueta.png';
+import parquetMeado from '../images/parquet_meado.jpeg';
 import './Home.css';
 
 function Home() {
@@ -13,12 +14,12 @@ function Home() {
   useEffect(() => {
     // Initialize PayPal button when component mounts and SDK is loaded
     const initPayPal = () => {
-      const container = document.getElementById('paypal-container-PWWMZXUQPUBMG');
+      const container = document.getElementById('paypal-container-RQQBXMD52NZW8');
       if (container && window.paypal && window.paypal.HostedButtons) {
         try {
           window.paypal.HostedButtons({
-            hostedButtonId: "PWWMZXUQPUBMG",
-          }).render("#paypal-container-PWWMZXUQPUBMG");
+            hostedButtonId: "RQQBXMD52NZW8",
+          }).render("#paypal-container-RQQBXMD52NZW8");
         } catch (error) {
           console.error('Error initializing PayPal button:', error);
         }
@@ -59,6 +60,43 @@ function Home() {
           >
             Ver Modelos
           </button>
+        </div>
+      </section>
+
+      {/* Beneficios y Usos Section */}
+      <section id="beneficios" className="benefits-section">
+        <div className="section-container">
+          <div className="benefits-content">
+            <div className="benefits-image">
+              <img 
+                src={parquetMeado} 
+                alt="Problema común: perro orinando en el suelo"
+              />
+            </div>
+            <div className="benefits-text">
+              <h2>¿Por qué EcoEmpapador?</h2>
+              <p className="benefits-intro">
+                En <strong>EcoEmpapador</strong>, nos dedicamos a hacer la vida de los dueños de mascotas 
+                más cómoda cuando se trata del momento de hacer sus necesidades. La idea de EcoEmpapador 
+                surgió cuando horarios ocupados hacían difícil llegar a casa y pasear a los perros a la 
+                misma hora cada día. La preocupación por pensar en nuestras queridas mascotas esperando 
+                para hacer sus necesidades nos llevó a crear una solución útil y conveniente para dueños 
+                de perros en todas partes.
+              </p>
+              <p className="benefits-subtitle">
+                Descubrirás que EcoEmpapador es la solución perfecta para:
+              </p>
+              <ul className="benefits-list">
+                <li>✅ <strong>Educar a un cachorro:</strong> Ayuda en el proceso de aprendizaje y evita accidentes en casa</li>
+                <li>✅ <strong>Residentes de apartamentos:</strong> Para quienes no tienen el lujo de un jardín o patio</li>
+                <li>✅ <strong>Profesionales ocupados:</strong> Que no siempre pueden llegar a casa a la misma hora</li>
+                <li>✅ <strong>Perros mayores:</strong> Con incontinencia y/o artritis que necesitan una solución cercana</li>
+                <li>✅ <strong>Evitar paseos nocturnos:</strong> No más salidas a la calle en el frío, la lluvia o la nieve</li>
+                <li>✅ <strong>Cansados del olor y mantenimiento:</strong> Del césped artificial tradicional</li>
+                <li>✅ <strong>Proteger el jardín:</strong> Tener un área para perros al lado de la casa para proteger tu jardín trasero</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -119,6 +157,30 @@ function Home() {
             Elige el modelo que mejor se adapte a tu hogar y a tu mascota
           </p>
 
+          {/* Personalización con Chapa */}
+          <div className="personalization-section">
+            <h3>✨ Chapa Personalizada Incluida</h3>
+            <div className="personalization-content">
+              <div className="personalization-image">
+                <img src={cespedAzulEtiqueta} alt="Empapador con chapa personalizada" />
+              </div>
+              <div className="personalization-text">
+                <p>
+                  <strong>Todos nuestros modelos incluyen una chapa personalizada</strong> con el nombre de tu mascota 
+                  o cualquier texto que desees. La chapa se coloca en el marco del empapador, dándole un toque único y personal.
+                </p>
+                <p>
+                  Perfecto para identificar el empapador de tu perro o como un regalo especial. 
+                  Cada empapador es único y personalizado según tus preferencias.
+                </p>
+                <p className="personalization-note">
+                  💡 <strong>Nota:</strong> Al realizar tu pedido, especifica el texto que deseas 
+                  en la chapa personalizada. Todos los modelos incluyen esta característica.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="products-grid">
             {products.map((product) => (
               <div key={product.id} className="product-card-landing">
@@ -134,32 +196,8 @@ function Home() {
             ))}
           </div>
 
-          {/* Personalización con Chapa */}
-          <div className="personalization-section">
-            <h3>✨ Personalización con Chapa</h3>
-            <div className="personalization-content">
-              <div className="personalization-image">
-                <img src={cespedAzulEtiqueta} alt="Empapador con chapa personalizada" />
-              </div>
-              <div className="personalization-text">
-                <p>
-                  <strong>¿Quieres personalizar tu empapador?</strong> Ofrecemos la opción de añadir una chapa 
-                  personalizada con el nombre de tu mascota o cualquier texto que desees.
-                </p>
-                <p>
-                  La chapa se coloca en el marco del empapador, dándole un toque único y personal. 
-                  Perfecto para identificar el empapador de tu perro o como un regalo especial.
-                </p>
-                <p className="personalization-note">
-                  💡 <strong>Nota:</strong> Al realizar tu pedido, puedes especificar el texto que deseas 
-                  en la chapa personalizada.
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="paypal-button-container">
-            <div id="paypal-container-PWWMZXUQPUBMG"></div>
+            <div id="paypal-container-RQQBXMD52NZW8"></div>
           </div>
         </div>
       </section>
@@ -215,7 +253,8 @@ function Home() {
                 <h3>¿Tienes Preguntas?</h3>
                 <p>
                   Estamos aquí para ayudarte. Si tienes alguna duda sobre nuestros productos o necesitas 
-                  asesoramiento, no dudes en contactarnos. Tu satisfacción es nuestra prioridad.
+                  asesoramiento, no dudes en contactarnos en <a href="mailto:gestion@empapador.com">gestion@empapador.com</a>. 
+                  Tu satisfacción es nuestra prioridad.
                 </p>
               </div>
             </div>

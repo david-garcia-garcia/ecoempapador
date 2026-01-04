@@ -20,6 +20,17 @@ function Footer() {
               <Link to="/terminos">Términos y Condiciones</Link>
             </nav>
           </div>
+          
+          <div className="footer-section">
+            <h4>Datos Legales</h4>
+            <p>
+              Profesional Consulting<br />
+              ES44124351R<br />
+              08780 Palleja<br />
+              Barcelona<br />
+              <a href="mailto:gestion@empapador.com">gestion@empapador.com</a>
+            </p>
+          </div>
         </div>
         
         <div className="footer-bottom">

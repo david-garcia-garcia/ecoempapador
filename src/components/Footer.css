@@ -29,6 +29,17 @@
   line-height: 1.6;
 }
 
+.footer-section p a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-section p a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .footer-nav {
   display: flex;
   flex-direction: column;

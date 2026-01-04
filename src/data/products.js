@@ -1,14 +1,14 @@
-import modeloAzul from '../images/modelo_azul_sinchapa.png';
-import modeloNegro from '../images/modelo_negro_sinchapa.png';
-import modeloRojo from '../images/modelo_rojo_sinchapa.png';
+import modeloAzul from '../images/cesped_azul_etiqueta.png';
+import modeloNegro from '../images/cesped_negro_etiqueta.png';
+import modeloVerde from '../images/cesped_verde_etiqueta.png';
 
 export const products = [
   {
     id: 1,
     name: 'Empapador Modelo Césped Artificial Verde',
     price: 50,
-    image: modeloRojo,
-    description: 'Empapador reutilizable con moqueta plástica y relleno de césped artificial verde. Lavable y duradero.',
+    image: modeloVerde,
+    description: 'Empapador reutilizable con chapa personalizada incluida. Color verde.',
     category: 'Empapadores',
     model: 'Césped Verde',
   },
@@ -17,7 +17,7 @@ export const products = [
     name: 'Empapador Modelo Negro',
     price: 30,
     image: modeloNegro,
-    description: 'Empapador reutilizable con moqueta plástica negra. Diseño elegante y funcional, fácil de limpiar.',
+    description: 'Empapador reutilizable con chapa personalizada incluida. Color negro.',
     category: 'Empapadores',
     model: 'Negro',
   },
@@ -26,7 +26,7 @@ export const products = [
     name: 'Empapador Modelo Césped Artificial Celeste',
     price: 60,
     image: modeloAzul,
-    description: 'Empapador reutilizable con moqueta plástica y relleno de césped artificial celeste. Absorbente y resistente.',
+    description: 'Empapador reutilizable con chapa personalizada incluida. Color celeste.',
     category: 'Empapadores',
     model: 'Césped Celeste',
   },
