@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
 import Legal from './pages/Legal';
+import Articles from './pages/Articles';
+import ArticleDetail from './pages/ArticleDetail';
 import './App.css';
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
             path="/checkout/:id"
             element={<Checkout getProductById={getProductById} />}
           />
+          <Route path="/articulos" element={<Articles />} />
+          <Route path="/articulos/:id" element={<ArticleDetail />} />
           <Route path="/aviso-legal" element={<Legal page="aviso-legal" />} />
           <Route path="/privacidad" element={<Legal page="privacidad" />} />
           <Route path="/cookies" element={<Legal page="cookies" />} />

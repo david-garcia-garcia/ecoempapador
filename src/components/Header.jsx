@@ -30,6 +30,7 @@ function Header({ siteName = 'E-Shop' }) {
         </Link>
         <nav className="nav">
           <Link to="/" className="nav-link" onClick={handleInicioClick}>Inicio</Link>
+          <Link to="/articulos" className="nav-link">Artículos</Link>
         </nav>
       </div>
     </header>
