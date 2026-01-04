@@ -241,8 +241,8 @@ function Home() {
                 <h3>Nuestra Garantía</h3>
                 <p>
                   Estamos tan seguros de la calidad de nuestros productos que ofrecemos 
-                  <strong> garantía de satisfacción</strong>. Si no estás completamente satisfecho, 
-                  te devolvemos tu dinero.
+                  <strong> garantía de satisfacción de 14 días</strong>. Si no estás completamente satisfecho 
+                  en un plazo de 14 días desde la recepción, te devolvemos tu dinero.
                 </p>
               </div>
 
