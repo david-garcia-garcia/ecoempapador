@@ -68,7 +68,7 @@ Error generating stack: `+o.message+`
       <h2>1. Datos Identificativos</h2>
       <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos:</p>
       <p><strong>Denominación social:</strong> Profesional Consulting</p>
-      <p><strong>NIF:</strong> ES47804046H</p>
+      <p><strong>NIF:</strong> ES44124351R</p>
       <p><strong>Actividad:</strong> Venta de empapadores reutilizables para perros</p>
       <p><strong>Email de contacto:</strong> <a href="mailto:gestion@empapador.com">gestion@empapador.com</a></p>
 
@@ -89,7 +89,7 @@ Error generating stack: `+o.message+`
     `},privacidad:{title:"Política de Privacidad",content:`
       <h2>1. Responsable del Tratamiento</h2>
       <p><strong>Responsable:</strong> Profesional Consulting</p>
-      <p><strong>NIF:</strong> ES47804046H</p>
+      <p><strong>NIF:</strong> ES44124351R</p>
       <p><strong>Email de contacto:</strong> <a href="mailto:gestion@empapador.com">gestion@empapador.com</a></p>
       <p>En cumplimiento de lo establecido en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), le informamos sobre el tratamiento de sus datos personales.</p>
 
