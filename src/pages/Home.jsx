@@ -196,6 +196,10 @@ function Home() {
             ))}
           </div>
 
+          <div className="shipping-info">
+            <p>🚚 <strong>Envío incluido:</strong> Todos los precios incluyen los costes de envío a toda España.</p>
+          </div>
+
           <div className="paypal-button-container">
             <div id="paypal-container-RQQBXMD52NZW8"></div>
           </div>
