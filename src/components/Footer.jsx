@@ -33,20 +33,21 @@ function Footer() {
           </div>
         </div>
         
-        {/* Trustpilot Widget */}
-        <div 
-          className="trustpilot-widget" 
-          data-locale="es-ES" 
-          data-template-id="56278e9abfbbba0bdcd568bc" 
-          data-businessunit-id="695aa8a5915d546cd61f9311" 
-          data-style-height="52px" 
-          data-style-width="100%" 
-          data-token="88ca35ff-d6da-461d-8002-2ba5efd31a00"
-        >
-          <a href="https://es.trustpilot.com/review/empapador.com" target="_blank" rel="noopener">Trustpilot</a>
-        </div>
-        
         <div className="footer-bottom">
+          {/* Trustpilot Widget */}
+          <div className="trustpilot-widget-container">
+            <div 
+              className="trustpilot-widget" 
+              data-locale="es-ES" 
+              data-template-id="56278e9abfbbba0bdcd568bc" 
+              data-businessunit-id="695aa8a5915d546cd61f9311" 
+              data-style-height="52px" 
+              data-style-width="100%" 
+              data-token="7aa961af-9c41-4ee4-9587-8553f7a8babf"
+            >
+              <a href="https://es.trustpilot.com/review/empapador.com" target="_blank" rel="noopener">Trustpilot</a>
+            </div>
+          </div>
           <p>&copy; {new Date().getFullYear()} EcoEmpapador. Todos los derechos reservados.</p>
         </div>
       </div>

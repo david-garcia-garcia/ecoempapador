@@ -12,28 +12,17 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Initialize PayPal button when component mounts and SDK is loaded
     const initPayPal = () => {
-      const container = document.getElementById('paypal-container-RQQBXMD52NZW8');
-      if (container && window.paypal && window.paypal.HostedButtons) {
-        try {
-          window.paypal.HostedButtons({
-            hostedButtonId: "RQQBXMD52NZW8",
-          }).render("#paypal-container-RQQBXMD52NZW8");
-        } catch (error) {
-          console.error('Error initializing PayPal button:', error);
-        }
-      } else if (!container) {
-        // Container not found yet, retry
-        setTimeout(initPayPal, 100);
-      } else if (!window.paypal) {
-        // PayPal SDK not loaded yet, retry
+      if (window.paypal && window.paypal.HostedButtons) {
+        paypal.HostedButtons({
+          hostedButtonId: "RQQBXMD52NZW8"
+        })
+        .render("#paypal-container-RQQBXMD52NZW8");
+      } else {
         setTimeout(initPayPal, 100);
       }
     };
-    
-    // Wait a bit for DOM to be ready
-    setTimeout(initPayPal, 100);
+    initPayPal();
   }, []);
 
   const handleBuyNow = (productId) => {
@@ -198,6 +187,10 @@ function Home() {
 
           <div className="shipping-info">
             <p>🚚 <strong>Envío incluido:</strong> Todos los precios incluyen los costes de envío a toda España.</p>
+          </div>
+
+          <div className="recommendation-info">
+            <p>💡 <strong>Recomendación:</strong> Te recomendamos tener dos unidades para poder usar una mientras la otra se seca después de la limpieza.</p>
           </div>
 
           <div className="paypal-button-container">
